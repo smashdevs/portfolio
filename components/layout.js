@@ -1,11 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-
-const name = 'Shu Uesugi'
-export const siteTitle = 'Next.js Sample Website'
+import Navbar from '../components/navbar'
+import { Image, Flex, Center, Text, VStack, Spacer } from '@chakra-ui/react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react'
+export const siteTitle = 'Smash Devs'
+export const name = 'Smash Devs'
 
 export default function Layout({ children, home }) {
   return (
@@ -14,7 +20,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Porfólio da dupla de desenvolvedores Jaderson e Gabriel."
         />
         <meta
           property="og:image"
@@ -25,38 +31,50 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <Navbar></Navbar>
+      <header className={styles.header} w="full">
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <Flex>
+              <Center>
+                <Image src='/images/header.jpg'/>
+              </Center>
+            </Flex>
           </>
         ) : (
           <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
+            <Flex w="full">
+              <Center backgroundImage="url('/images/header.jpg')" 
+                      w="full" 
+                      backgroundAttachment="fixed"
+                      backgroundRepeat="no-repeat"
+                      backgroundPosition="center center"
+                      backgroundSize="cover"
+                      >
+              <span style={{height: '100%',left: 0,position: 'relative',top: 0,width: '100%',background: 'rgba(0,0,0,0.60)'}}>
+                  <VStack w="full" h="100%" spacing="0" p="4rem 2rem">
+                    <Center w="full">
+                      <Text fontSize="3xl" color="white">{siteTitle}</Text>
+                    </Center>
+                    <Center w="full">
+                      <Breadcrumb separator=' | ' color="white" fontWeight='medium' fontSize='sm'>
+                        <BreadcrumbItem>
+                          <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbItem>
+                          <BreadcrumbLink href='#'>PortFolio</BreadcrumbLink>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbItem isCurrentPage>
+                          <BreadcrumbLink href='#'>{siteTitle}</BreadcrumbLink>
+                        </BreadcrumbItem>
+                      </Breadcrumb>
+                    </Center>
+                  </VStack>
+                </span>
+              </Center>
+            </Flex>
           </>
         )}
       </header>
