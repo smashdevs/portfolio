@@ -32,7 +32,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar></Navbar>
-      <header className={styles.header} w="full">
+      <header className={styles.header} w="full" style={{ paddingTop: "60px"}}>
         {home ? (
           <>
             <Flex>
@@ -63,7 +63,7 @@ export default function Layout({ children, home }) {
                         </BreadcrumbItem>
 
                         <BreadcrumbItem>
-                          <BreadcrumbLink href='#'>PortFolio</BreadcrumbLink>
+                          <BreadcrumbLink href='#'>Portfolio</BreadcrumbLink>
                         </BreadcrumbItem>
 
                         <BreadcrumbItem isCurrentPage>

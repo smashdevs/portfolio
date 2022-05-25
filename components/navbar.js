@@ -3,15 +3,17 @@ import Logo from '../public/logo.svg';
 import {Link} from 'react-scroll'
 import { data } from './header.data'
 import React from "react";
+import MobileDrawer from "./mobile.drawer"
+
 const title = "Smash Devs"
 const subTitle = "Desenvolvendo para um mundo melhor"
 
 export default function Header() {
   return (
-    <chakra.header id="header">
+    <chakra.header id="header" position="fixed" bg="white" w="full" zIndex="20">
       <Flex
         w="100%"
-        px="6"
+        px={{ base: "6", md: "15%" }}
         py="1"
         align="center"
         justify="space-between"
@@ -28,12 +30,15 @@ export default function Header() {
             </VStack>
           </Flex>
         </HStack>
-        <HStack as="nav" spacing="5">
+        <HStack as="nav" spacing="5" display={{ base: "none", md: "flex" }}>
           {data.map((item, i) => (
             <Link key={i} to={item.href}>
               <Button variant="link" fontWeight="normal" fontSize="sm"> {item.label} </Button>
             </Link>
           ))}
+        </HStack>
+        <HStack display={{ base: "flex", md: "none" }}>
+            <MobileDrawer/>
         </HStack>
       </Flex>
     </chakra.header>
