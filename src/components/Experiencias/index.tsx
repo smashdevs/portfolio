@@ -10,23 +10,23 @@ function Experiencias() {
       <section>
         <ExperienciaItem
           year="2018"
+          title="Dev Full-stack (PHP)"
+          description="Desenvolvimento de software PHP e manutenção de sistema legado"
+        />
+        <ExperienciaItem
+          year="2018"
           title="Dev Front-end"
-          description="Lorem ipsum dolor sdsadas it amet, consectetur adipiscing elit. Aliquam"
-        />
-        <ExperienciaItem
-          year="2021"
-          title="Dev Front-sasend"
-          description="Lorem ipsum sss dolor sit amet, consectetur adipiscing elit. Aliquam"
-        />
-        <ExperienciaItem
-          year="2021"
-          title="Dev Frondsa dsa t-end"
-          description="Lorem idsadas psum dolor sit amet, consectetur adipiscing elit. Aliquam"
+          description="Desenvolvimento de widget de agendamento para Startup"
         />
         <ExperienciaItem
           year="2020"
-          title="Dev Front-end"
-          description="Lorem ipsumdsada  dolor sit amet, consectetur adipiscing elit. Aliquam"
+          title="Dev Full-stack (PHP), Dev Back-end (Java)"
+          description="Desenvolvimento de sistema de gerenciamento de academias"
+        />
+        <ExperienciaItem
+          year="2021"
+          title="Dev Back-end (Java)"
+          description="Desenvolvimento de plataforma para câmbio internacional"
         />
       </section>
     </Container>
