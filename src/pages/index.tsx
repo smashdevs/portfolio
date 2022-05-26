@@ -84,7 +84,8 @@ const query = ` query MyQuery {
 export const getStaticProps: GetStaticProps = async () => {
   const projectResponse = await request({
     query: query,
-    variables: { }
+    variables: { },
+    preview: false
   });
 
 

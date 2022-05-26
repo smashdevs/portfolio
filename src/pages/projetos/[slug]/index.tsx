@@ -100,7 +100,8 @@ export const getStaticProps: GetStaticProps = async context => {
   
   let response = await request({
     query: query,
-    variables: { }
+    variables: { },
+    preview: false
   });
 
   response = response.allProjetos[0];
