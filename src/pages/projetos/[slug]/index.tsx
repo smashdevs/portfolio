@@ -64,7 +64,8 @@ const query = ` query MyQuery {
 
   const projetos = await request({
     query: query,
-    variables: { }
+    variables: { },
+    preview: false
   });
 
   const paths = projetos.allProjetos.map(projeto => ({
