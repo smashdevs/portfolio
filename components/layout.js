@@ -37,14 +37,14 @@ export default function Layout({ children, home }) {
           <>
             <Flex>
               <Center>
-                <Image src='/images/header.jpg'/>
+                <Image src='/images/header-2.jpg'/>
               </Center>
             </Flex>
           </>
         ) : (
           <>
             <Flex w="full">
-              <Center backgroundImage="url('/images/header.jpg')" 
+              <Center backgroundImage="url('/images/header-2.jpg')" 
                       w="full" 
                       backgroundAttachment="fixed"
                       backgroundRepeat="no-repeat"
